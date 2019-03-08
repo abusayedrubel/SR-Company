@@ -142,6 +142,49 @@
         </div>
       </div>
     </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="p-4 bg-dark text-white">
+      <div class="container">
+        <h2 class="text-center">testimonials</h2>
+        <div class="row text-center">
+          <div class="col">
+            <div class="slider">
+              <div>
+                <blockquote class="blockquote">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quaerat.
+                  </p>
+                  <footer class="blockquote-footer">John Doe From
+                    <cite title="Company 1">Company 1</cite>
+                  </footer>
+                </blockquote>
+              </div>
+              <div>
+                <blockquote class="blockquote">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quaerat.
+                  </p>
+                  <footer class="blockquote-footer">Sam Smith From
+                    <cite title="Company 2">Company 2</cite>
+                  </footer>
+                </blockquote>
+              </div>
+              <div>
+                <blockquote class="blockquote">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quaerat.
+                  </p>
+                  <footer class="blockquote-footer">Meghan Williams From
+                    <cite title="Company 3">Company 3</cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -156,22 +199,6 @@
     </div>
   </footer>
 
-  <!--Modals-->
-  <!-- VIDEO MODAL -->
-  <div class="modal fade" id="videoModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button class="close" data-dismiss="modal">
-            <span>&times;</span>
-          </button>
-          <iframe frameborder="0" height="350" width="100%" src="https://www.youtube.com/embed/faTTTVFWp-w" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -184,30 +211,10 @@
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
 
-    // Configure Slider
-    $('.carousel').carousel({
-      interval: 6000,
-      pause: 'hover'
-    });
-
-    // Video Play
-    $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
-        });
-      });
-    });
-
-    // Lightbox Init
-    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
+    $('.slider').slick({
+      infinite: true,
+      slideToShow: 1,
+      slideToScroll: 1
     });
   </script>
 </body>

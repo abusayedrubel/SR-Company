@@ -81,6 +81,11 @@ body {
   padding-top: 50px;
 }
 
+/*About Page*/
+.about-img {
+  margin-top: -50px;
+}
+
 /*Footer*/
 #main-footer {
   background: #000;
